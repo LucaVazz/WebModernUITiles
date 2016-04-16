@@ -1,0 +1,187 @@
+* {     /* sizing-fix */
+    box-sizing: border-box;
+}
+
+
+/* --- site-wide styling ------- */
+body {
+    padding: 0px;
+    margin: 20px;
+    margin-left: 35px;
+
+    background-color: #eeeeee;
+    font-family: "Segoe UI", Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+
+    font-weight: 600;
+}
+h1 {
+    margin-left: -15px;
+    margin-bottom: 15px;
+}
+
+
+/* --- tiles in a flexible, wrapping row ------- */
+.tile-flexrow {
+    margin-bottom: 20px;
+    margin-left: -5px;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.tile-flexrow .tile-big, .tile-flexrow .tile-small {
+    margin: 5px;
+
+    flex: 0 0 auto;
+}
+.tile-flexrow h2 {
+    width: 100%;
+}
+
+
+/* --- a rigid group of tiles ------- */
+.tile-group {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+
+/* --- 4-by-4 group of small tiles ------- */
+/* resulting layut:
+    |---|---|
+    | 1 | 2 |
+    |---|---|
+    | 3 | 4 |
+    |---|---|       */
+.tile-group-2x2 {
+    flex: 0 0 auto;
+    max-width:  140px;
+    height:     140px;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.tile-group-2x2 .tile-small {
+    margin: 5px;
+
+    flex: 0 0 auto;
+}
+
+
+/* --- 1-by-2 group of small tiles ------- */
+.tile-group-1x2 {
+    flex: 0 0 auto;
+    width:  70px;
+    height: 140px;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.tile-group-1x2 .tile-small {
+    margin: 5px;
+
+    flex: 0 0 auto;
+}
+
+
+/* --- styling for both tile-sizes ------- */
+.tile-big, .tile-small {
+    position: relative;
+
+    padding: 10px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.tile-big .fa, .tile-small .fa {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* make the whole tile, semantically correct, clickable */
+.tile-big a span, .tile-small a span { 
+    position: absolute; 
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+
+/* --- specific styling for the big-sized tile ------- */
+.tile-big {
+    width:  130px;
+    height: 130px;
+}
+.tile-big p {
+    position: absolute;
+    bottom: 0;
+
+    padding: 0px;
+    padding-bottom: 7px;
+    margin: 0px;
+
+    font-size: 10pt;
+    color: #efefef;
+}
+.tile-big .fa {
+    font-size: 60px;
+}
+.tile-big img.tile-icon {
+    display: block;
+    max-width:  80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+.tile-big img.tile-background {
+    height: 60px;
+    width: auto;
+
+    margin: -10px;     /* "override" padding of the parent element */
+}
+
+
+/* --- specific styling for the small-sized tile ------- */
+.tile-small {
+    width:  60px;
+    height: 60px;
+}
+.tile-small p {
+    display: none;
+}
+.tile-small .fa {
+    font-size: 30px;
+}
+.tile-small img.tile-icon {
+    display: block;
+    max-width:  40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+.tile-small img.tile-background {
+    height: 60px;
+    width: auto;
+
+    margin: -10px;     /* "override" padding of the parent element */
+}
+
+
+/* --- separate the tile/group from the following tiles/groups */
+.separate {
+    margin-right: 70px;
+}
