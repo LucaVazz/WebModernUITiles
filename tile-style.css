@@ -140,7 +140,7 @@
     max-height: 100px;
 }
 .tile-big img.tile-background {
-    height: 150px;
+    height: 130px;
 }
 
 
@@ -160,7 +160,7 @@
     max-height: 35px;
 }
 .tile-small img.tile-background {
-    height: 80px;
+    height: 60px;
 }
 
 
